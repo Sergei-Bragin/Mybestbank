@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bankApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My best bank APP</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="/webjars/angularjs/1.5.7/angular.js"></script>
+    <script src="/webjars/angularjs/1.5.7/angular-resource.js"></script>
+    <script src="/webjars/angularjs/1.5.7/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="login-form/login-form.module.js"></script>
+    <script src="login-form/login-form.component.js"></script>
+    <script src="registration-form/registration-form.module.js"></script>
+    <script src="registration-form/registration-form.component.js"></script>
+</head>
+<body>
+<div class="container  activity-padding">
+    <div ng-view></div>
+</div>
+</body>
+</html>

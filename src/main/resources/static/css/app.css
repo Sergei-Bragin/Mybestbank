@@ -1,0 +1,21 @@
+.activity-border{
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    font-family: Helvetica;
+    font-style: normal;
+    color: #5C5C5C;
+    margin-top: 20px;
+}
+.activity-padding{
+    padding: 2%;
+}
+.link-position-top{
+    position:relative;
+    left:auto;
+    bottom:auto;
+}
+.separate-line {
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
