@@ -4,33 +4,33 @@ angular
         templateUrl: 'login-form/login-form.template.html'
     });
 
-angular.module('loginForm').controller('UserCtrl', ['userService', '$scope', '$http',
-    function (mainService, $scope, $http) {
+angular.module('loginForm')
+    .controller('UserCtrl', ['$location', '$scope', 'AuthenticationService', '$localStorage',
+    function ($location, $scope, AuthenticationService, $localStorage) {
 
-        $scope.token = null;
         $scope.error = null;
 
-        $scope.login = function () {
-            $scope.error = null;
-            mainService.login($scope.userEmail).then(function (token) {
-                    $scope.token = token;
-                    $http.defaults.headers.common.Authorization = 'Bearer ' + token;
-                },
-                function (error) {
-                    $scope.error = error;
-                    $scope.userEmail = '';
-                });
-        };
+        initController();
 
-        $scope.logout = function () {
-            $scope.userEmail = '';
-            $scope.token = null;
-            $http.defaults.headers.common.Authorization = '';
-        };
-
-        $scope.loggedIn = function () {
-            return $scope.token !== null;
+        function initController() {
+            AuthenticationService.Logout();
         }
+
+        $scope.login = function () {
+            AuthenticationService.Login($scope.email, $scope.password, function (result) {
+                if (result === true) {
+                    $location.path('/home');
+                } else {
+                    $scope.error = 'Username or password is incorrect';
+                }
+            });
+        };
+
+        $scope.inLogin = function () {
+            return $localStorage.currentUser != null;
+        };
+
     }
 ]);
+
 

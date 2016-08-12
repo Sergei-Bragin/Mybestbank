@@ -1,5 +1,5 @@
-angular.module('core.user')
-    .service('userService', function ($http) {
+angular.module('core.user');
+/*    .service('userService', function ($http) {
         return {
             login : function (useremail) {
                 return $http.post('/user/login', {email: useremail}).then(function (response) {
@@ -7,5 +7,5 @@ angular.module('core.user')
                 });
             }
         }
-    });
+    });*/
 

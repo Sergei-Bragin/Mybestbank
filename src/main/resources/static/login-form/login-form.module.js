@@ -1,1 +1,1 @@
-angular.module('loginForm',[]);
+angular.module('loginForm',['ngMessages']);
