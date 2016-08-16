@@ -1,5 +1,4 @@
-angular
-    .module('bankApp')
+angular.module('core.user.authentication')
     .factory('AuthenticationService', Service);
 
 function Service($http, $localStorage) {
@@ -14,7 +13,7 @@ function Service($http, $localStorage) {
         $http.post('/user/login', {email: useremail, password: password})
             .success(function (response) {
                 // login successful if there's a token in the response
-                if (response.token) {
+                if (response.token != null) {
                     // store username and token in local storage to keep user logged in between page refreshes
                     $localStorage.currentUser = {email: useremail, token: response.token};
 

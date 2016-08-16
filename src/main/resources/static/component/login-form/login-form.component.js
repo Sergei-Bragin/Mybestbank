@@ -1,7 +1,7 @@
 angular
     .module('loginForm')
     .component('loginForm', {
-        templateUrl: 'login-form/login-form.template.html'
+        templateUrl: 'component/login-form/login-form.template.html'
     });
 
 angular.module('loginForm')

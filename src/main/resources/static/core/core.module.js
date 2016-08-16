@@ -1,3 +1,4 @@
 angular.module('core',[
-    'core.user'
+    'core.user.authentication',
+    'core.user.registration'
 ]);
