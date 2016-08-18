@@ -1,6 +1,7 @@
 package com.my_best_bank.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.my_best_bank.util.validation.Unique;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,13 +17,15 @@ public class User {
     @GeneratedValue
     private Long id;
 
-    @NotNull
+    @NotNull(message = "Cant be empty")
     private String name;
 
-    @NotNull
+    @Unique(message = "This email is not available")
+    @NotNull(message = "Cant be empty")
     private String email;
 
-    @NotNull
+    @NotNull(message = "Cant be empty")
+    @Size(min = 4, max = 64, message ="Myst be betvin 4 - 16 symbol")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 

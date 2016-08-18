@@ -16,11 +16,18 @@ function Service($http, $localStorage) {
                 password: userPassword
             })
             .success(function (response) {
-                if (response) {
                     callback(true)
-                } else {
-                    callback(false)
+            })
+            .error(function (response) {
+                var arr = response.errors,
+                    message = null;
+                for(var i = 0 ; i < arr.length ; i++){
+                    if(arr[i].field == 'email'){
+                        message = arr[i].defaultMessage;
+                    }
                 }
+                console.log(message);
+                callback(message)
             })
     }
 }

@@ -11,6 +11,8 @@ angular.module('registrationForm')
         'RegistrationService',
         function ($scope, $location, AuthenticationService, RegistrationService) {
 
+            $scope.error = null;
+
             initController();
 
             function initController() {
@@ -32,7 +34,7 @@ angular.module('registrationForm')
                                         $location.path('/home')
                                     })
                             } else {
-                                $scope.error = "Registration fail"
+                                $scope.error = result;
                             }
                         })
             }
