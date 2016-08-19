@@ -1,40 +1,45 @@
 angular
     .module('loginForm')
     .component('loginForm', {
-        templateUrl: 'component/login-form/login-form.template.html'
+        templateUrl: 'component/test/login-form.template.html',
+        bindings:{
+            email: '<',
+            password: '<'
+        },
+        controller: [
+            '$location',
+            'AuthenticationService',
+            '$localStorage',
+            loginForm]
     });
 
-angular.module('loginForm')
-    .controller('UserCtrl', ['$location', '$scope', 'AuthenticationService', '$localStorage',
-        function ($location, $scope, AuthenticationService, $localStorage) {
 
-            $scope.error = null;
+function loginForm($location, AuthenticationService, $localStorage){
+    var self = this;
 
-            initController();
+    self.error = null;
 
-            function initController() {
-                AuthenticationService.Logout();
-            }
+    initController();
 
-            $scope.login = function () {
-                AuthenticationService
-                    .Login(
-                        $scope.email,
-                        $scope.password,
-                        function (result) {
-                            if (result === true) {
-                                $location.path('/home');
-                            } else {
-                                $scope.error = 'Username or password is incorrect';
-                            }
-                        });
-            };
+    function initController() {
+        AuthenticationService.Logout();
+    }
 
-            $scope.inLogin = function () {
-                return $localStorage.currentUser != null;
-            };
+    self.login = function () {
+        AuthenticationService
+            .Login(
+                self.email,
+                self.password,
+                function (result) {
+                    if (result === true) {
+                        $location.path('/home');
+                    } else {
+                        self.error = 'Username or password is incorrect';
+                    }
+                });
+    };
 
-        }
-    ]);
-
-
+    self.inLogin = function () {
+        return $localStorage.currentUser != null
+    };
+}

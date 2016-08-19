@@ -1,7 +1,7 @@
 angular.module('core.user.registration')
     .factory('RegistrationService', Service);
 
-function Service($http, $localStorage) {
+function Service($http) {
     var service = {};
 
     service.RegistrationUser = RegistrationUser;
@@ -16,13 +16,13 @@ function Service($http, $localStorage) {
                 password: userPassword
             })
             .success(function (response) {
-                    callback(true)
+                callback(true)
             })
             .error(function (response) {
                 var arr = response.errors,
                     message = null;
-                for(var i = 0 ; i < arr.length ; i++){
-                    if(arr[i].field == 'email'){
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i].field == 'email') {
                         message = arr[i].defaultMessage;
                     }
                 }

@@ -1,1 +1,5 @@
-angular.module('loginForm',['ngMessages']);
+angular.module('loginForm',
+    [
+        'ngMessages',
+        'core.user.authentication'
+    ]);

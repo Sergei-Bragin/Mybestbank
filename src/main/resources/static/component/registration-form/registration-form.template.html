@@ -1,88 +1,91 @@
-<div ng-controller="RegCtrl">
-    <form name="registrationForm" novalidate ng-submit="registration()">
-        <!--HEADER-->
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-8">
-                <h2>Registration form</h2>
-            </div>
-            <div class="col-md-1">
-                <a href="#!/login">Login</a>
-            </div>
+<form name="registrationForm" novalidate ng-submit="$ctrl.registration()">
+    <!--HEADER-->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-8">
+            <h2>Registration form</h2>
         </div>
-
-        <!--FIELD-->
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 separate-line">
-
-                <div class="form-group" ng-class="{'has-error': registrationForm.name.$invalid}">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input id="exampleInputEmail1"
-                           placeholder="Name"
-                           name="name"
-                           type="text"
-                           class="form-control"
-                           ng-model="name"
-                           required/>
-
-                    <span class="help-block" ng-show="registrationForm.name.$touched && registrationForm.name.$error.required">Name required</span>
-                </div>
-
-                <div class="form-group" ng-class="{'has-error': registrationForm.email.$invalid}">
-                    <label for="exampleInputEmail2">Email address</label>
-                    <input id="exampleInputEmail2"
-                           placeholder="Email"
-                           name="email"
-                           type="email"
-                           class="form-control"
-                           ng-model="email"
-                           required/>
-
-                    <span class="help-block" ng-show="registrationForm.email.$touched && registrationForm.email.$error.required">Email required</span>
-                    <span class="help-block" ng-show="registrationForm.email.$error.email">Not email</span>
-                    <span ng-if="error" class="help-block">{{error}}</span>
-                </div>
-
-                <div class="form-group" ng-class="{'has-error': registrationForm.password.$invalid}">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input id="exampleInputPassword1"
-                           placeholder="Password"
-                           name="password"
-                           type="password"
-                           class="form-control"
-                           ng-model="password"
-                           required/>
-
-                    <span class="help-block" ng-show="registrationForm.password.$touched && registrationForm.password.$error.required">Password required</span>
-                </div>
-
-                <div class="form-group" ng-class="{'has-error': registrationForm.rePassword.$invalid}">
-                    <label for="exampleInputPassword2">Re-enter Password</label>
-                    <input id="exampleInputPassword2"
-                           placeholder="Pe-enter Password"
-                           name="rePassword"
-                           type="password"
-                           class="form-control"
-                           ng-model="rePassword"
-                           required/>
-
-                    <span class="help-block" ng-show="registrationForm.rePassword.$touched && registrationForm.rePassword.$error.required">Password required</span>
-                    <span class="help-block" ng-show="password!=rePassword">Password not equals re-password</span>
-                </div>
-
-                <!--<div ng-if="error" class="alert alert-danger">{{error}}</div>-->
-            </div>
-            <div class="col-md-3"></div>
+        <div class="col-md-1">
+            <a href="#!/login">Login</a>
         </div>
+    </div>
 
-        <!--BUTTON-->
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <button type="submit" class="btn btn-success btn-block" ng-disabled="registrationForm.$invalid">Success</button>
+    <!--FIELD-->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 separate-line">
+
+            <div class="form-group" ng-class="{'has-error': registrationForm.name.$invalid}">
+                <label for="exampleInputEmail1">Name</label>
+                <input id="exampleInputEmail1"
+                       placeholder="Name"
+                       name="name"
+                       type="text"
+                       class="form-control"
+                       ng-model="$ctrl.name"
+                       required/>
+
+                <span class="help-block"
+                      ng-show="registrationForm.name.$touched && registrationForm.name.$error.required">Name required</span>
             </div>
-            <div class="col-md-3"></div>
+
+            <div class="form-group" ng-class="{'has-error': registrationForm.email.$invalid}">
+                <label for="exampleInputEmail2">Email address</label>
+                <input id="exampleInputEmail2"
+                       placeholder="Email"
+                       name="email"
+                       type="email"
+                       class="form-control"
+                       ng-model="$ctrl.email"
+                       required/>
+
+                <span class="help-block"
+                      ng-show="registrationForm.email.$touched && registrationForm.email.$error.required">Email required</span>
+                <span class="help-block" ng-show="registrationForm.email.$error.email">Not email</span>
+                <span ng-if="$ctrl.error" class="help-block">{{$ctrl.error}}</span>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': registrationForm.password.$invalid}">
+                <label for="exampleInputPassword1">Password</label>
+                <input id="exampleInputPassword1"
+                       placeholder="Password"
+                       name="password"
+                       type="password"
+                       class="form-control"
+                       ng-model="$ctrl.password"
+                       required/>
+
+                <span class="help-block"
+                      ng-show="registrationForm.password.$touched && registrationForm.password.$error.required">Password required</span>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': registrationForm.rePassword.$invalid}">
+                <label for="exampleInputPassword2">Re-enter Password</label>
+                <input id="exampleInputPassword2"
+                       placeholder="Pe-enter Password"
+                       name="rePassword"
+                       type="password"
+                       class="form-control"
+                       ng-model="$ctrl.rePassword"
+                       required/>
+
+                <span class="help-block"
+                      ng-show="registrationForm.rePassword.$touched && registrationForm.rePassword.$error.required">Password required</span>
+                <span class="help-block"
+                      ng-show="$ctrl.password!=$ctrl.rePassword">Password not equals re-password</span>
+            </div>
+
         </div>
-    </form>
-</div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <!--BUTTON-->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-success btn-block" ng-disabled="registrationForm.$invalid">Success
+            </button>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</form>
