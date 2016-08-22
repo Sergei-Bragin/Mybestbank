@@ -7,6 +7,7 @@ angular
         'core',
         'home',
         'registrationForm',
-        'loginForm'
+        'loginForm',
+        'ui.bootstrap.demo'
     ]);
 

@@ -1,1 +1,5 @@
-angular.module('home',[]);
+angular.module('home',
+    [
+        'ui.bootstrap.demo'
+
+]);

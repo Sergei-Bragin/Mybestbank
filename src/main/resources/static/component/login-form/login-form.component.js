@@ -1,7 +1,7 @@
 angular
     .module('loginForm')
     .component('loginForm', {
-        templateUrl: 'component/test/login-form.template.html',
+        templateUrl: 'component/login-form/login-form.template.html',
         bindings:{
             email: '<',
             password: '<'
