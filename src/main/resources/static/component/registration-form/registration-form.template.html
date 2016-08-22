@@ -1,4 +1,4 @@
-<form name="registrationForm" novalidate ng-submit="$ctrl.registration()">
+<form name="registrationForm" novalidate ng-submit="registrationFormCtrl.registration()">
     <!--HEADER-->
     <div class="row">
         <div class="col-md-3"></div>
@@ -22,7 +22,7 @@
                        name="name"
                        type="text"
                        class="form-control"
-                       ng-model="$ctrl.name"
+                       ng-model="registrationFormCtrl.name"
                        required/>
 
                 <span class="help-block"
@@ -36,13 +36,13 @@
                        name="email"
                        type="email"
                        class="form-control"
-                       ng-model="$ctrl.email"
+                       ng-model="registrationFormCtrl.email"
                        required/>
 
                 <span class="help-block"
                       ng-show="registrationForm.email.$touched && registrationForm.email.$error.required">Email required</span>
                 <span class="help-block" ng-show="registrationForm.email.$error.email">Not email</span>
-                <span ng-if="$ctrl.error" class="help-block">{{$ctrl.error}}</span>
+                <span ng-if="registrationFormCtrl.error" class="help-block">{{registrationFormCtrl.error}}</span>
             </div>
 
             <div class="form-group" ng-class="{'has-error': registrationForm.password.$invalid}">
@@ -52,7 +52,7 @@
                        name="password"
                        type="password"
                        class="form-control"
-                       ng-model="$ctrl.password"
+                       ng-model="registrationFormCtrl.password"
                        required/>
 
                 <span class="help-block"
@@ -66,13 +66,13 @@
                        name="rePassword"
                        type="password"
                        class="form-control"
-                       ng-model="$ctrl.rePassword"
+                       ng-model="registrationFormCtrl.rePassword"
                        required/>
 
                 <span class="help-block"
                       ng-show="registrationForm.rePassword.$touched && registrationForm.rePassword.$error.required">Password required</span>
                 <span class="help-block"
-                      ng-show="$ctrl.password!=$ctrl.rePassword">Password not equals re-password</span>
+                      ng-show="registrationFormCtrl.password!=registrationFormCtrl.rePassword">Password not equals re-password</span>
             </div>
 
         </div>

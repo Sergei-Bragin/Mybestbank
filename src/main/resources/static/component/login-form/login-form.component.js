@@ -10,7 +10,8 @@ angular
             '$location',
             'AuthenticationService',
             '$localStorage',
-            loginForm]
+            loginForm],
+        controllerAs: 'loginFormCtrl'
     });
 
 

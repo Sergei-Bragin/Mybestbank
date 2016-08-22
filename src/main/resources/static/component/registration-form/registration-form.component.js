@@ -12,7 +12,8 @@ angular
             '$location',
             'AuthenticationService',
             'RegistrationService',
-            registrationForm]
+            registrationForm],
+        controllerAs:'registrationFormCtrl'
     });
 
 
