@@ -1,6 +1,6 @@
 angular
     .module('bankApp', [
-        'ngRoute',
+        'ui.router',
         'ngResource',
         'ngStorage',
         'ngMessages',

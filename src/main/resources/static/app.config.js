@@ -3,30 +3,35 @@ angular
     .config(config)
     .run(run);
 
-function config($locationProvider, $routeProvider){
-    $locationProvider.hashPrefix('!');
-    $routeProvider
-        .when('/login', {
-            template: '<login-form></login-form>'
-        })
-        .when('/registration', {
-            template: '<registration-form></registration-form>'
-        })
-        .when('/home',{
-            template: '<home></home>'
-        })
-        .when('/taken',{
+function config($stateProvider, $urlRouterProvider){
+
+    $stateProvider
+        .state('taken',{
+            url: "/taken",
             template: '<h1>HI TAKEN</h1>'
         })
-        .when('/digitalArchief',{
+        .state('digitalArchief',{
+            url: "/digitalArchief",
             template: '<h1>HI digitalArchief</h1>'
         })
-        .when('/opslag',{
+        .state('opslag',{
+            url: "/opslag",
             template: '<h1>HI opslag</h1>'
         })
-        .otherwise(
-            {redirectTo: '/taken'}
-        );
+        .state('login',{
+            url: "/login",
+            template: '<login-form></login-form>'
+        })
+        .state('registration',{
+            url: "/registration",
+            template: '<registration-form></registration-form>'
+        })
+        .state('home',{
+            url: "/home",
+            template: '<home></home>'
+        });
+
+    $urlRouterProvider.otherwise("/taken");
 }
 
 function run($rootScope, $http, $location, $localStorage) {
