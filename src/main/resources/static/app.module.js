@@ -5,6 +5,7 @@ angular
         'ngStorage',
         'ngMessages',
         'core',
+        'header',
         'home',
         'registrationForm',
         'loginForm',

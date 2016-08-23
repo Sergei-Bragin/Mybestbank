@@ -1,0 +1,45 @@
+<!--FIRST LINE -->
+<div class="row">
+    <div class="col-md-3"><h1>{{headerCtrl.companyName}}</h1></div>
+    <div class="col-md-7"></div>
+    <div class="col-md-2">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle"
+                    type="button" id="dropdownMenu1"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="true">
+                Welkom {{headerCtrl.userName}}
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li ng-show="headerCtrl.userRole=='admin'"> Role {{headerCtrl.userRole}} </li>
+                <li><a href="#!/logiut">Logout</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Other Language</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--SECOND LINE-->
+<div class="row">
+    <div class="col-md-9">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#!/taken">Taken</a></li>
+            <li role="presentation"><a href="#!/digitalArchief">Digitaal Archief</a></li>
+            <li role="presentation"><a href="#!/opslag">Opslag</a></li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="form-control divider" placeholder="Search">
+    </div>
+</div>
+
+<!--<a href="#!/taken">Taken</a>-->
+<!--</div>-->
+<!--<div class="col-md-2">-->
+    <!--<a href="#!/digitaalArchief">Digitaal Archief</a>-->
+<!--</div>-->
+<!--<div class="col-md-2">-->
+    <!--<a href="#!/opslag">Opslag</a>-->

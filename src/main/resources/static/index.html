@@ -16,9 +16,12 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/ngstorage/ngStorage.js"
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+
     <!--MY SCRIPT -->
     <script src="app.module.js"></script>
     <script src="app.config.js"></script>
@@ -33,11 +36,15 @@
     <script src="component/login-form/login-form.component.js"></script>
     <script src="component/registration-form/registration-form.module.js"></script>
     <script src="component/registration-form/registration-form.component.js"></script>
+    <!--Header-->
+    <script src="component/header/header.module.js"></script>
+    <script src="component/header/header.component.js"></script>
 
     <script src="component/modalWin/modal-win.module.js"></script>
     <script src="component/modalWin/modal-win.component.js"></script>
 </head>
 <body>
+<header></header>
 <div class="container activity-padding">
     <div ng-view></div>
 </div>
