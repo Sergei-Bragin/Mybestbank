@@ -15,8 +15,17 @@ function config($locationProvider, $routeProvider){
         .when('/home',{
             template: '<home></home>'
         })
+        .when('/taken',{
+            template: '<h1>HI TAKEN</h1>'
+        })
+        .when('/digitalArchief',{
+            template: '<h1>HI digitalArchief</h1>'
+        })
+        .when('/opslag',{
+            template: '<h1>HI opslag</h1>'
+        })
         .otherwise(
-            {redirectTo: '/login'}
+            {redirectTo: '/taken'}
         );
 }
 
@@ -28,10 +37,10 @@ function run($rootScope, $http, $location, $localStorage) {
 
     // redirect to login page if not logged in and trying to access a restricted page
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
-        var publicPages = ['/login', '/registration'];
+        var publicPages = ['/login', '/registration', '/taken','/digitalArchief','/opslag'];
         var restrictedPage = publicPages.indexOf($location.path()) === -1;
         if (restrictedPage && !$localStorage.currentUser) {
-            $location.path('/login');
+            $location.path('/taken');
         }
     });
 }
