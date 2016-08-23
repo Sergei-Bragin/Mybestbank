@@ -14,7 +14,6 @@ angular
         controllerAs: 'loginFormCtrl'
     });
 
-
 function loginForm($location, AuthenticationService, $localStorage){
     var self = this;
 

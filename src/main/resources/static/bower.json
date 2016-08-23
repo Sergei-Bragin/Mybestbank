@@ -1,0 +1,29 @@
+{
+  "name": "myBestBankApp",
+  "authors": [
+    "Sergeio Bragin"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x",
+    "angular-animate": "^1.5.8",
+    "angular-messages": "^1.5.8",
+    "angular-touch": "^1.5.8",
+    "bootstrap": "^3.3.x",
+    "jquery": "^3.1.0",
+    "ngstorage": "^0.3.11"
+  }
+}
